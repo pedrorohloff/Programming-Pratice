@@ -4,6 +4,8 @@
 #include "locale.h"
 #define ATEND 100
 
+
+//testing
 struct pessoa {
     char nome[100];
     char cpf[20];
