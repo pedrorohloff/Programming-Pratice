@@ -1,8 +1,3 @@
-//Acadêmico: Pedro Henrique Rohloff
-//R.A. 23219510-5
-//Disciplina: Linguagens e Técnicas de Programação
-//Valor da Atividade: 3,0
-//Prazo: 08/12/2023
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
