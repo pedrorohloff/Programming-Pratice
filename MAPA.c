@@ -5,15 +5,18 @@
 #define ATEND 100
 
 
-//testing
+//Struct usada para o cadastro e armazenamento de dados dos usuários.
 struct pessoa {
     char nome[100];
     char cpf[20];
     int setor;
 };
+
 int contador = 0;
 struct pessoa cadastro[ATEND];
 
+
+//Bloco para a chamada de funções.
 void listagem (int i);
 void solicitarAtendimento();
 void atendimentoAberturaConta();
