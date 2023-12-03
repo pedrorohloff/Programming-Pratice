@@ -4,7 +4,6 @@
 #include "locale.h"
 #define ATEND 100
 
-
 //Struct usada para o cadastro e armazenamento de dados dos usuários.
 struct pessoa {
     char nome[100];
@@ -15,19 +14,15 @@ struct pessoa {
 int contador = 0;
 struct pessoa cadastro[ATEND];
 
-
 //Bloco para a chamada de funções.
 void listagem (int i);
 void solicitarAtendimento();
-void atendimentoAberturaConta();
-void atendimentoCaixa();
-void atendimentoGerentePessoaFisica();
-void atendimentoGerentePessoaJuridica();
 void listarAtendimentos();
 void listarAtendimentosSetor();
 void pausaLimpa();
 void cadastroNomeCPF();
 void menu();
+void antendimento(int setor);
 
 int main()
 {
@@ -36,10 +31,10 @@ int main()
 
     do
     {
-        printf("==============================================================\n");
+        printf("===============================================\n");
         printf("Bem-vindo ao menu de atendimento!\n");
         printf("Por favor, selecione uma das opções\n");
-        printf("==============================================================\n");
+        printf("===============================================\n");
         printf("1 - Solicitar Atendimento\n");
         printf("2 - Listar Atendimentos Registrados\n");
         printf("3 - Listar Atendimentos por Setor\n");
@@ -81,19 +76,19 @@ void solicitarAtendimento()
     system("cls");
     switch (opcao) {
         case 1:
-            atendimentoAberturaConta();
+            antendimento(1);
             system("cls");
             break;
         case 2:
-            atendimentoCaixa();
+            antendimento(2);
             system("cls");
             break;
         case 3:
-            atendimentoGerentePessoaFisica();
+            antendimento(3);
             system("cls");
             break;
         case 4:
-            atendimentoGerentePessoaJuridica();
+            antendimento(4);
             system("cls");
             break;
         case 5:
@@ -103,50 +98,6 @@ void solicitarAtendimento()
             printf("Insira uma operação válida.\n");
             pausaLimpa();
             break;
-    }
-}
-
-void atendimentoAberturaConta()
-{
-    if (contador < ATEND)
-    {
-        cadastroNomeCPF();
-        cadastro[contador].setor = 1;
-        contador++;
-        system("cls");
-    }
-}
-
-void atendimentoCaixa()
-{
-    if (contador < ATEND)
-    {
-        cadastroNomeCPF();
-        cadastro[contador].setor = 2;
-        contador++;
-        system("cls");
-    }
-}
-
-void atendimentoGerentePessoaFisica()
-{
-    if (contador < ATEND)
-    {
-        cadastroNomeCPF();
-        cadastro[contador].setor = 3;
-        contador++;
-        system("cls");
-    }
-}
-
-void atendimentoGerentePessoaJuridica()
-{
-    if (contador < ATEND)
-    {
-        cadastroNomeCPF();
-        cadastro[contador].setor = 4;
-        contador++;
-        system("cls");
     }
 }
 
@@ -195,19 +146,19 @@ void listagem(int i)
     switch (cadastro[i].setor) {
         case 1:
             printf("Tipo Atendimento - 1 - Abertura de Conta\n");
-            printf("==============================================\n");
+            printf("===============================================\n");
             break;
         case 2:
             printf("Tipo Atendimento - 2 - Caixa\n");
-            printf("==============================================\n");
+            printf("===============================================\n");
             break;
         case 3:
             printf("Tipo Atendimento - 3 - Gerente Pessoa Física\n");
-            printf("============================================\n");
+            printf("===============================================\n");
             break;
         case 4:
             printf("Tipo Atendimento - 4 - Gerente Pessoa Jurídica\n");
-            printf("==============================================\n");
+            printf("===============================================\n");
             break;
         default:
             break;
@@ -232,12 +183,22 @@ void cadastroNomeCPF()
 }
 void menu()
 {
-    printf("==============================================================\n");
+    printf("===============================================\n");
     printf("Bem-vindo ao menu de atendimento!\n");
     printf("Por favor, selecione uma das opções\n");
-    printf("==============================================================\n");
+    printf("===============================================\n");
     printf("1 - Abertura de Conta\n");
     printf("2 - Caixa\n");
     printf("3 - Gerente Pessoa Física\n");
     printf("4 - Gerente Pessoa jurídica\n");
+}
+void antendimento(int setor)
+{
+    if (contador < ATEND)
+    {
+        cadastroNomeCPF();
+        cadastro[contador].setor = setor;
+        contador++;
+        system("cls");
+    }
 }
