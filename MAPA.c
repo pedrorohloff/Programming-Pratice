@@ -10,7 +10,7 @@ struct pessoa {
     char cpf[20];
     int setor;
 };
-
+//teste
 int contador = 0;
 struct pessoa cadastro[ATEND];
 
@@ -22,7 +22,7 @@ void listarAtendimentosSetor();
 void pausaLimpa();
 void cadastroNomeCPF();
 void menu();
-void antendimento(int setor);
+void atendimento(int setor);
 
 int main()
 {
@@ -76,19 +76,19 @@ void solicitarAtendimento()
     system("cls");
     switch (opcao) {
         case 1:
-            antendimento(1);
+            atendimento(1);
             system("cls");
             break;
         case 2:
-            antendimento(2);
+            atendimento(2);
             system("cls");
             break;
         case 3:
-            antendimento(3);
+            atendimento(3);
             system("cls");
             break;
         case 4:
-            antendimento(4);
+            atendimento(4);
             system("cls");
             break;
         case 5:
@@ -192,7 +192,7 @@ void menu()
     printf("3 - Gerente Pessoa Física\n");
     printf("4 - Gerente Pessoa jurídica\n");
 }
-void antendimento(int setor)
+void atendimento(int setor)
 {
     if (contador < ATEND)
     {
